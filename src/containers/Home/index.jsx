@@ -32,7 +32,7 @@ export default function Home() {
               category={data.strCategory}
               description={data.strCategoryDescription}
               image={data.strCategoryThumb}
-              link={`/recipe/${data.strCategory}`}
+              link={`/recipes/${data.strCategory}`}
             />
           );
         })}
