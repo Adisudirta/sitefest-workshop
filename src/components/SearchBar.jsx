@@ -1,13 +1,8 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
 export default function SearchBar() {
-  const [keyword, setKeyword] = useState("");
-  const navigate = useNavigate();
-
   function gotoPageSearchData(e) {
     e.preventDefault();
-    navigate(`/search/${keyword}`);
+
+    // Do something when submit
   }
 
   return (
@@ -17,8 +12,6 @@ export default function SearchBar() {
           className="form-control form-control-lg"
           type="text"
           placeholder="Search here..."
-          value={keyword}
-          onChange={(e) => setKeyword(e.target.value)}
         />
       </div>
       <div className="col-12 col-md-2 mt-2 mt-md-0">

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Footer() {
   return (
     <footer className="footer py-3 text-center mt-5 mb-4">
