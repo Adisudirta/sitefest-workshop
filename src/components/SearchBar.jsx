@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Search() {
+export default function SearchBar() {
   const [keyword, setKeyword] = useState("");
   const navigate = useNavigate();
 
   function gotoPageSearchData(e) {
     e.preventDefault();
-    navigate(`/search?search=${keyword}`);
+    navigate(`/search/${keyword}`);
   }
 
   return (

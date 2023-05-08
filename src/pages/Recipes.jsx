@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams, Link } from "react-router-dom";
 
-import foodAPI from "@/api/foodAPI";
+import foodAPI from "../api/foodAPI";
 
-import Search from "@/components/Search";
+import SearchBar from "@/components/SearchBar";
 import Card from "@/components/Card";
 
 export default function Recipes() {
@@ -15,17 +15,20 @@ export default function Recipes() {
     setMealsData(payload.meals);
   }
 
-  getFoodByCategoryData();
+  useEffect(() => {
+    getFoodByCategoryData();
+  }, []);
 
   return (
     <div className="container d-flex flex-column justify-content-center">
       {/* Search Section */}
-      <p className="text-center fs-1 fw-bold text-primary mt-5">Food Recipes</p>
-      <Search />
+      <h2 className="text-center fs-1 fw-bold text-primary mt-5">{`${slug} Category`}</h2>
 
-      <div>
-        <h1>Recipes: {slug}</h1>
-      </div>
+      <Link to="/" className="text-center text-primary mb-3">
+        <small>🏠 Back to Home</small>
+      </Link>
+
+      <SearchBar />
 
       {/* Card List Section  */}
       <div className="row row-cols-1 row-cols-md-5 g-4 mt-3">

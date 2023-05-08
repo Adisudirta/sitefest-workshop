@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import foodAPI from "@/api/foodAPI";
 import Card from "@/components/Card";
-import Search from "@/components/Search";
+import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
   const [categoryData, setCategoryData] = useState([]);
@@ -13,13 +13,18 @@ export default function Home() {
     setCategoryData(payload.categories);
   }
 
-  getCategoryData();
+  useEffect(() => {
+    getCategoryData();
+  }, []);
 
   return (
     <div className="container d-flex flex-column justify-content-center">
       {/* Search Section */}
-      <p className="text-center fs-1 fw-bold text-primary mt-5">Food Recipes</p>
-      <Search />
+      <h2 className="text-center fs-1 fw-bold text-primary mt-5">
+        Food Recipes
+      </h2>
+
+      <SearchBar />
 
       <h3>{searchParams.get("search")}</h3>
 
