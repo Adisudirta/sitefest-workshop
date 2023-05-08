@@ -3,14 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function Search() {
   const [keyword, setKeyword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function gotoPageSearchData(e) {
     e.preventDefault();
-
-    navigate("/about")
-
-    console.log(keyword);
+    navigate(`/search?search=${keyword}`);
   }
 
   return (

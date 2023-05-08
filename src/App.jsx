@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./containers/Home";
-import About from "./containers/About";
-import Recipes from "./containers/Recipes"
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Recipes from "./pages/Recipes";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
